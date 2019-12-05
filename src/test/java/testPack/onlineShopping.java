@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class onlineShopping {
@@ -19,7 +19,7 @@ public class onlineShopping {
 		dir.findElement(By .xpath("//input[@name='password']")).sendKeys("vicky");
 		dir.findElement(By .xpath("//input[@name='login']")).click();
 	}
-	@BeforeTest
+	@BeforeMethod
 	public void beforeMethod() {
 		  //launch browser and application
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
@@ -27,7 +27,7 @@ public class onlineShopping {
 		dri.get("http://www.newtours.demoaut.com/");
 	  }
 
-	  @AfterTest
+	  @AfterMethod
 	  public void afterMethod() {
 		  Assert.assertTrue(dir.getTitle().contains("Flight"));
 		  dir.close();
