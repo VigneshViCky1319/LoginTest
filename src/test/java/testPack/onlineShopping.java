@@ -20,7 +20,7 @@ public class onlineShopping {
 		dir.findElement(By .xpath("//input[@name='login']")).click();
 	}
 	@BeforeTest
-	public void beforeTest() {
+	public void beforeMethod() {
 		  //launch browser and application
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		WebDriver dri = new ChromeDriver();
@@ -28,7 +28,7 @@ public class onlineShopping {
 	  }
 
 	  @AfterTest
-	  public void afterTest() {
+	  public void afterMethod() {
 		  Assert.assertTrue(dir.getTitle().contains("Flight"));
 		  dir.close();
 	  }
